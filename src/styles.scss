@@ -1,0 +1,59 @@
+body {
+  font-family: sans-serif;
+}
+
+.glide {
+  &__slide {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 6px;
+
+    &:after {
+      position: absolute;
+      z-index: 10;
+      inset: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgb(34, 193, 195);
+      background: linear-gradient(
+        148deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(253, 187, 45, 1) 100%
+      );
+
+      transition: opacity 0.3s ease;
+      opacity: 0.3;
+    }
+
+    &:hover {
+      img {
+        filter: blur(3px);
+      }
+      &:after {
+        opacity: 0.5;
+      }
+    }
+
+    span {
+      position: absolute;
+      z-index: 12;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    img {
+      min-width: 110%;
+      margin: -10px;
+      object-fit: cover;
+    }
+  }
+
+  &__slide {
+    background: #000;
+    color: #fff;
+  }
+}
